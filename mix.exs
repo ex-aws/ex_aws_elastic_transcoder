@@ -4,7 +4,7 @@ defmodule ExAws.ElasticTranscoder.Mixfile do
   def project do
     [
       app: :ex_aws_elastic_transcoder,
-      version: "2.0.0",
+      version: "2.1.0",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env),
       start_permanent: Mix.env == :prod,
@@ -28,14 +28,14 @@ defmodule ExAws.ElasticTranscoder.Mixfile do
       {:hackney, ">= 0.0.0", only: [:dev, :test]},
       {:sweet_xml, ">= 0.0.0", only: [:dev, :test]},
       {:poison, ">= 0.0.0", only: [:dev, :test]},
-      ex_aws(),
+      ex_aws()
     ]
   end
 
   defp ex_aws() do
     case System.get_env("AWS") do
       "LOCAL" -> {:ex_aws, path: "../ex_aws"}
-      _ -> {:ex_aws, "~> 2.0"}
+      _ -> {:ex_aws, "~> 2.1"}
     end
   end
 end
